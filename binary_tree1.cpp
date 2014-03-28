@@ -5,7 +5,6 @@
 //============================================================================
 
 #include <iostream>
-#include <vector>
 using namespace std;
 
 // -----------------------------------------------------------------------------
@@ -172,43 +171,9 @@ void printTreeDetailed(struct node* node) {
 	printTreeDetailed(node->right);
 }
 
-void printPicture(struct node* node) {
-	if (maxDepth(node) > 4) {
-		cout << "This binary tree is too large to print, sorry!\n";
-		return;
-	}
-	if (maxDepth(node) == 0) {
-		cout << "This tree is empty!\n";
-		return;
-	}
-	if (maxDepth(node) == 1) {
-		cout << node->data;
-	}
-	if (maxDepth(node) == 2 ) {
-
-	}
-}
-
-
 int main() {
 
-	vector<int> myVector;
-	myVector.push_back(5);
-	cout << myVector.back();
-
-	/*
-	// method using 1 pointer
-	node* node2 = newNode(2);
-	node2->left = newNode(1);
-	node2->right = newNode(3);
-
-
-	cout << "top: "   << node2->data   << "\n"
-         << "left: "  << (node2->left)->data  << "\n"
-         << "right: " << (node2->right)->data << endl;
-
-
-	// method using calls to insert
+	// build tree using using calls to insert
 	node* root = NULL;
 	root = insert(root, 4);
 	root = insert(root, 2);
@@ -223,24 +188,18 @@ int main() {
 	// printPostorder(root);
 	 cout << endl;
 	 printTree(root);
-	*/
-	/*
-	cout << "top: "   << root->data   << "\n"
-	     << "left: "  << (root->left)->data  << "\n"
-	     << "right: " << (root->right)->data << endl;
-	*/
 
-	/*
+
+
 	cout << "size: " << size(root) << endl;
 	cout << "depth: "  << maxDepth(root) << endl;
 	cout << "min: " << minValue(root) << endl;
-	*/
-	/*
+
 	bool match;
 	int userEntry;
 
 	do {
-		cout << "Enter an integer: ";
+		cout << "Enter an integer, enter -1 to quit: ";
 		cin >> userEntry;
 
 		match = hasPathSum(root, userEntry);
@@ -253,7 +212,6 @@ int main() {
 			cout << endl;
 		}
 	} while (userEntry != -1);
-*/
 
-
+return 0;
 }
